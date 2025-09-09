@@ -1,0 +1,51 @@
+.f-2 {
+    margin: auto;
+    padding: 24px;
+    max-width: 640px;
+}
+
+.d-2 {
+    display: flex;
+    padding-top:16px;
+    padding-bottom: 16px;
+    flex-direction: column;
+}
+
+.go-back-3 {
+    display: inline-block;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.bg-1 {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  min-height: 100vh;       
+  background: url('../assets/image2.jpeg') no-repeat center center;
+  background-size: cover;  
+  /* padding: 20px; */
+  box-sizing: border-box;
+}
+
+.Box-signup {
+  width: 530px;            
+  max-width: 90%;          
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  
+}
+
+.Box-signup > * {
+    flex: 0 1 calc(100% - 20px); 
+  box-sizing: border-box;
+  background: url("../assets/image2.jpeg") no-repeat center top;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  font-family: "Noto Sans", sans-serif;
+}
+

@@ -1,0 +1,130 @@
+
+:root {
+  --primary-blue: #007bff;
+  --secondary-blue: #0056b3;
+  --text-dark: #333;
+  --text-light: #fff;
+  --bg-dark-blue: #0056b3; 
+  /* --bg-light-blue: #007bff;  */
+  --border-radius: 6px;
+  --transition-smooth: 0.3s ease-in-out;
+}
+
+
+header {
+  background-color: var(--bg-dark-blue); 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* padding: 15px 20px; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  /* border-radius: 50px; */
+  font-family: "Noto Sans", sans-serif;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* max-width: 1200px; */
+  padding: 15px 20px;
+  margin: 0 auto;
+  /* background-color: aqua; */
+
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-light); 
+  letter-spacing: -1px;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+
+.nav-item,
+.signin {
+  color: var(--text-light); 
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: color var(--transition-smooth);
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-light); 
+  transform: scaleX(0);
+  transition: transform var(--transition-smooth);
+}
+
+.nav-item:hover {
+  color: var(--bg-light-blue);
+}
+
+.nav-item:hover::after {
+  transform: scaleX(1);
+}
+
+
+.nav-item.active {
+  color: var(--text-light);
+  font-weight: bold;
+}
+
+.nav-item.active::after {
+  transform: scaleX(1);
+}
+
+.signin {
+  padding: 8px 16px;
+  background-color: var(--bg-light-blue); 
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-smooth), transform var(--transition-smooth);
+}
+
+.signin:hover {
+  background-color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+
+.header-spacer {
+  height: 80px;
+}
+
+
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-center,
+  .nav-right {
+    margin-top: 10px;
+  }
+
+  .nav-center {
+    gap: 15px;
+  }
+}

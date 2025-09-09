@@ -1,0 +1,21 @@
+.cart-btn {
+  
+    border: none;
+    background: green;
+    color: white;
+    border-radius:3px;
+    padding: 10px 10px;
+    cursor: pointer;
+    margin-left: auto;  
+    display: block;
+    
+
+}
+
+.cart-grid {
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 20px; 
+  padding: 20px;
+}

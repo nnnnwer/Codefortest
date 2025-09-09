@@ -1,0 +1,154 @@
+.product-page {
+  padding: 20px;
+  font-family: "Noto Sans", sans-serif;
+  /* font-weight: bold; */
+  
+ 
+}
+
+.product-page h1 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  
+}
+
+.search-input {
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  width: 200px; 
+  font-size: 14px;
+}  
+
+.card-list-horizontal {
+  /* display: flex;  */
+  overflow-x: auto;
+  gap: 15px;
+  flex-wrap: wrap; 
+}
+
+.card-horizontal {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  min-width: 96%; 
+  
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; 
+  flex: 1; 
+}
+
+@media (max-width: 768px) {
+  .card-horizontal {
+    flex-direction: column; 
+    align-items: center; 
+    min-width: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-info {
+    flex-direction: column; 
+    gap: 10px; 
+    align-items: center; 
+    text-align: center; 
+  }
+}
+
+.card-info h4,
+.card-info p {
+  margin: 0; 
+}
+
+.card-buttons {
+  display: flex;
+  gap: 5px;
+   position: relative; 
+  z-index: 10; 
+}
+
+.card-horizontal img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.search-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+.search-input:focus {
+  border-color: #007bff;
+}
+ 
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.B-F {
+  margin-left: auto; 
+  text-decoration: none;
+}
+
+.Tabs-1 {
+  display: flex;
+  /* flex-direction: row;  */
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  padding: 20px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #1976D2;
+  color: #ffffff;
+  font-weight: bold;
+  /* min-width: 96%;  */
+}
+
+.Tabs-1 p {
+  flex: 1; 
+  margin: 0;
+  text-align: center; 
+  
+}
+
+.Tabs-2 {
+  display: flex;
+  /* flex-direction: row;  */
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  /* padding: 20px 10px; */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  /* background-color: #1976D2; */
+  /* color: #ffffff; */
+  /* font-weight: bold; */
+  /* min-width: 96%;  */
+}
+
+.Tabs-2 .tablist {
+  display: flex;
+  flex: 1; 
+  margin: 0;
+  /* text-align: center;  */
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
+
