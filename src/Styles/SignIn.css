@@ -15,14 +15,14 @@
 .h-1 {
     font:bold;
     padding: 8px;
-    
+    color: #353535;
 }
 .d-1 {
     display: flex;
     padding-top:16px;
     padding-bottom: 16px;
     flex-direction: column;
-    
+
 }
 .i-1{ 
     padding: 12px;
@@ -65,11 +65,12 @@
   justify-content: center;     
   align-items: center;         
   gap: 20px;
-  min-height: 100vh;          
+  min-height: 100vh; 
+  min-width: 50vh;          
   text-align: center;
   padding: 20px;               
   box-sizing: border-box;
-   width: 50%; 
+   /* width: 50%;  */
   /* background-color: blue;  */
   font-family: "Noto Sans", sans-serif;
 
@@ -79,7 +80,7 @@
   flex: 0 1 calc(100% - 20px); 
   box-sizing: border-box;
   background: url("../assets/image2.jpeg") no-repeat center top;
-  padding: 10px;
+  padding: 10px 30px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: transform 0.2s;
@@ -92,6 +93,7 @@
   align-items: center;
   text-align: center;
   margin: 20px 0;
+  color: #353535;
 }
 
 .or-separator::before,

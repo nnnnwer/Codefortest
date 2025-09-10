@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import "../Styles/Signin.css";
+import "../../Styles/Signin.css";
 import { Form, Link, redirect } from "react-router-dom";
-import { UserAuth } from "../context/AuthContext";
-import { apiPost } from "../Api/Api";
+import { UserAuth } from "../../context/AuthContext";
+import { apiPost } from "../../Api/Api";
 import Swal from "sweetalert2";
-import bgImage from "../assets/bg.png";
-import bg from "../assets/image2.jpeg";
-
+import bg from "../../assets/image2.jpeg";
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
 const Signin = () => {
   const [loading, setLoading] = useState(false);
   const { session } = UserAuth();
@@ -34,31 +36,40 @@ const Signin = () => {
         <div className="form-container">
           <Form className="f-1" method="post" action="/signin">
             <h1 className="h-1">Sign In</h1>
-
-            <div className="d-1">
-              
-              <input
+            
+            <Box sx={{ '& > :not(style)': { m: 1 },display: 'flex', flexDirection: 'column'}}>
+              <TextField
+              required
+              size="small"
                 name="username"
                 placeholder="Username"
                 className="i-1"
                 type="text"
+                InputProps={{
+    style: { backgroundColor: 'white' }
+  }}
               />
-              <input
+              <TextField
+              required
+              size="small"
                 name="password"
                 placeholder="Password"
                 className="i-2"
                 type="password"
+                InputProps={{
+    style: { backgroundColor: 'white' }
+  }}
               />
-              <button type="submit" className="b-1" name="_action">
+              <Button variant="contained" type="submit" name="_action">
                 Sign in
-              </button>
-            </div>
+              </Button>
+            </Box>
 
             {/* OR separator */}
-            <div className="or-separator">
+            {/* <div className="or-separator">
               <span>OR</span>
-            </div>
-
+            </div> */}
+<Divider>or</Divider>
             <p>
               Don't have an account? <Link to="/signup">Register</Link>
             </p>

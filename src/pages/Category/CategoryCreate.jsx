@@ -1,9 +1,9 @@
 import TextField from '@mui/material/TextField'
 import React, { useEffect } from 'react'
-import { UserAuth } from '../context/AuthContext'
+import { UserAuth } from '../../context/AuthContext'
 import { Form, redirect } from 'react-router-dom'
-import { apiPost } from '../Api/Api'
-import "../Styles/Category.css"
+import { apiPost } from '../../Api/Api'
+import "../../Styles/Category.css"
 const CategoryCreate = () => {
   
 const handleSubmit = (e) => {

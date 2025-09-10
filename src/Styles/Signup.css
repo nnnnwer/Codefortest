@@ -1,7 +1,8 @@
-.f-2 {
-    margin: auto;
-    padding: 24px;
+.pading-container {
+    /* margin: auto; */
+    padding: 10px 30px;
     max-width: 640px;
+    background-color: aquamarine;
 }
 
 .d-2 {
@@ -28,21 +29,29 @@
   background-size: cover;  
   /* padding: 20px; */
   box-sizing: border-box;
+  /* filter:blur(3px); */
 }
 
 .Box-signup {
-  width: 530px;            
-  max-width: 90%;          
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  
+  display: flex;                   
+  justify-content: center;     
+  align-items: center;         
+  gap: 20px;
+  min-height: 100vh; 
+  min-width: 50vh;          
+  text-align: center;
+  padding: 20px;               
+  box-sizing: border-box;
+   /* width: 50%;  */
+  /* background-color: blue;  */
+  font-family: "Noto Sans", sans-serif;
 }
 
 .Box-signup > * {
     flex: 0 1 calc(100% - 20px); 
   box-sizing: border-box;
   background: url("../assets/image2.jpeg") no-repeat center top;
-  padding: 10px;
+  padding: 10px 30px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: transform 0.2s;

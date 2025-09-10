@@ -18,7 +18,7 @@ const fallbackImage = (
 );
 
 
-const ImageWithFallback = ({ src, alt }) => {
+const ImageWithFallback = ({ src, alt,cartList }) => {
   const [status, setStatus] = useState("loading");
 
   React.useEffect(() => {
@@ -31,7 +31,7 @@ const ImageWithFallback = ({ src, alt }) => {
   if (status === "error") return fallbackImage;
   if (status === "loading")
     return <div style={{ width: "80px", height: "80px", backgroundColor: "#eee" }} />;
-  return <img src={src} alt={alt} style={{ width: "15%", height: "100px", borderRadius: "4px", objectFit: "cover" }} />;
+  return <img src={src} alt={alt} style={{ width: cartList? cartList:"15%", height: "100px", borderRadius: "4px", objectFit: "cover" }} />;
 };
 
 export default ImageWithFallback

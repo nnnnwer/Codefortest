@@ -112,7 +112,7 @@ header nav {
   height: 80px;
 }
 
-
+/* 
 @media (max-width: 768px) {
   header nav {
     flex-direction: column;
@@ -127,4 +127,4 @@ header nav {
   .nav-center {
     gap: 15px;
   }
-}
+} */

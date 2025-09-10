@@ -1,13 +1,13 @@
 import { Link, useLoaderData, useRouteLoaderData } from "react-router-dom";
-import "../Styles/Category.css";
-import { apiGet } from "../Api/Api";
-import { tokenLoader } from "../Api/Authen";
+import "../../Styles/Category.css";
+import { apiGet } from "../../Api/Api";
+import { tokenLoader } from "../../Api/Authen";
 import React, {  useState } from "react";
-import Delete from "../components/Delete";
-import Edit from "../components/Edit";
+import Delete from "../../components/Delete";
+import Edit from "../../components/Edit";
 import Button from "@mui/material/Button";
-import EditCategory from "../components/EditCategory";
-import DeleteCategory from "../components/DeleteCategory";
+import EditCategory from "../../components/EditCategory";
+import DeleteCategory from "../../components/DeleteCategory";
 
 export default function Category() {
   const { productdata } = useRouteLoaderData("category");

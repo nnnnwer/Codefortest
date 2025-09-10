@@ -1,23 +1,19 @@
 import { createBrowserRouter } from "react-router-dom";
-import Signin, { actionSignin } from "./pages/Signin";
-import Signup, { actionSignup } from "./pages/Signup";
-import Category from "./pages/Category";
-import { loaderCategoryPage } from "./pages/Category";
-import { loaderOrderPage } from "./pages/Order";
-import Order from "./pages/Order";
-import { actionFood, loaderDropdown } from "./pages/Food";
-import Food from "./pages/Food";
+import Signin, { actionSignin } from "./pages/Authenication/Signin";
+import Signup, { actionSignup } from "./pages/Authenication/Signup";
+import Category ,{ loaderCategoryPage }from "./pages/Category/Category";
+import Order,{ loaderOrderPage } from "./pages/Order/Order";
+import Food, { actionFood, loaderDropdown } from "./pages/Product/Food";
 import RootLayout from "./components/RootLayout";
-import Product, { loaderProductPage } from "./pages/Product";
-import ProductEdit, { actionProductEdit, loaderDropdown2 } from "./pages/ProductEdit";
+import Product, { loaderProductPage } from "./pages/Product/Product";
+import ProductEdit, { actionProductEdit, loaderDropdown2 } from "./pages/Product/ProductEdit";
 import RootProduct from "./components/RootProduct";
-import RootOrder from "./components/RootOrder";
-import MyAccount from "./pages/MyAccount";
-import CategoryCreate, { actionCategoryCreate } from "./pages/CategoryCreate";
+import MyAccount, { actionProfile } from "./pages/Profile/MyAccount";
+import CategoryCreate, { actionCategoryCreate } from "./pages/Category/CategoryCreate";
 import { checkAuthLoader } from "./Api/Authen";
 import RootCategory from "./components/RootCategory";
-import { actionCategoryChange } from "./pages/CategoryChange";
-import CategoryChange from "./pages/CategoryChange";
+import CategoryChange,{ actionCategoryChange } from "./pages/Category/CategoryChange";
+
 // import ProductList from "./components/ProductList";
 
 export const router = createBrowserRouter([
@@ -27,6 +23,7 @@ export const router = createBrowserRouter([
     path: "/",
     element: <RootLayout />,
     loader: checkAuthLoader,
+    action:actionProfile,
     children: [
       { index: true, element: <Order />, action: actionSignin ,loader: loaderOrderPage,},
 //  {

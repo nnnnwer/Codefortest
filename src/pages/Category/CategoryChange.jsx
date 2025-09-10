@@ -1,8 +1,8 @@
 import React from "react";
 import { Form, redirect, useLocation } from "react-router-dom";
-import { tokenLoader } from "../Api/Authen";
+import { tokenLoader } from "../../Api/Authen";
 import TextField from "@mui/material/TextField";
-import { apiPut } from "../Api/Api";
+import { apiPut } from "../../Api/Api";
 
 function CategoryChange() {
   const location = useLocation();

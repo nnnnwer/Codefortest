@@ -22,6 +22,9 @@ export const CartProvider = ({ children }) => {
   function removeItem(id) {
     dispatch({ type: "REMOVE", payload: id });
   }
+  function deleteAllCart() {
+    dispatch({ type: "DELETE"});
+  }
 
   function addQuantity(id) {
     dispatch({ type: "ADD", payload: id });
@@ -67,6 +70,7 @@ export const CartProvider = ({ children }) => {
         addToCart,
         orders,
         placeOrder,
+        deleteAllCart
       }}
     >
       {children}

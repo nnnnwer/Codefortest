@@ -8,6 +8,7 @@ export const AuthContextProvider = ({ children }) => {
   
   useEffect(() => {
     const savedSession = localStorage.getItem("session");
+    console.log(savedSession)
     if (savedSession) {
       setSession(JSON.parse(savedSession));
     }

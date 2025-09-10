@@ -1,15 +1,15 @@
 import React from "react";
-import { useCart } from "../context/CartContext"
+import { useCart } from "../../context/CartContext"
 import { useState, useEffect } from "react";
-import "../Styles/Order.css";
+import "../../Styles/Order.css";
 import CartPage from "./CartPage";
-import { apiGet } from "../Api/Api";
-import { tokenLoader } from "../Api/Authen";
+import { apiGet } from "../../Api/Api";
+import { tokenLoader } from "../../Api/Authen";
 import { redirect, useLoaderData, useNavigate, useRouteLoaderData } from "react-router-dom";
-import ImageWithFallback from "../components/ImageWithFallback";
+import ImageWithFallback from "../../components/ImageWithFallback";
 import Pagination from "@mui/material/Pagination";
 import Box from "@mui/material/Box";
-import ImageWithFallback1 from "../components/ImageWithFallback1";
+import ImageWithFallback1 from "../../components/ImageWithFallback1";
 import Grid from "@mui/material/Grid";
 
  
@@ -52,7 +52,7 @@ export default function OrderPage() {
          <Box sx={{ flexGrow: 1 }} >
       <Grid container spacing={{ xs: 2, md: 3 }} className="card-list">
         {productdata.data.map((products,index) => (
-          <Grid key={index} size={{ xs: 12, sm: 4, md:2 }}>
+          <Grid key={index} size={{ xs: 12, sm: 6, md:2 }}>
             <div key={products.id} className="product-card">
               <ImageWithFallback1         
                 src={`${import.meta.env.VITE_HTTP_URL}/image/${products.image}`}

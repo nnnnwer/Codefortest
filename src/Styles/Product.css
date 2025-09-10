@@ -116,6 +116,8 @@
   color: #ffffff;
   font-weight: bold;
   /* min-width: 96%;  */
+  /* min-width: 600px;
+flex: 0 0 auto;  */
 }
 
 .Tabs-1 p {
@@ -134,21 +136,40 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   margin-bottom: 10px;
+  /* min-width: 600px; */
   /* background-color: #1976D2; */
   /* color: #ffffff; */
   /* font-weight: bold; */
   /* min-width: 96%;  */
+   min-width: 600px;
+
 }
 
-.Tabs-2 .tablist {
+.Tabs-2 .tablist{
   display: flex;
   flex: 1; 
-  margin: 0;
+  /* margin: 0; */
   /* text-align: center;  */
   align-items: center;
   justify-content: center;
+  z-index: -1;
   
 }
+h2{
+  color: rgb(61, 61, 61);
+}
+@media (max-width: 600px) {
+  .Tabs-1 {
+    font-size: 12px;
+  }
+}
+ .tabs-container {       
+ overflow-x: auto;  
+}
+
+/* .tabs-container::-webkit-scrollbar {
+  display: none; 
+} */
 
 
 

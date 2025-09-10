@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import UploadImage from "../components/UploadImage";
+import UploadImage from "../../components/UploadImage";
 import { Form, redirect, useLoaderData, useNavigate } from "react-router-dom";
-import "../Styles/Food.css";
-import { apiGet, apiPost } from "../Api/Api";
-import { UserAuth } from "../context/AuthContext";
-import Category from "./Category";
-import Selectcategory from "../components/Selectcategory"
-import { tokenLoader } from "../Api/Authen";
+import "../../Styles/Food.css";
+import { apiGet, apiPost } from "../../Api/Api";
+import { UserAuth } from "../../context/AuthContext";
+import Category from "../Category/Category";
+import Selectcategory from "../../components/Selectcategory"
+import { tokenLoader } from "../../Api/Authen";
 const Food = () => {
   const {category} = useLoaderData();
   console.log('dropp',category)

@@ -1,0 +1,8 @@
+.menu-bar{
+  color: #545454;
+  text-decoration: none;
+  font-weight: bold;
+}
+.menu-bar.active{
+  color: #005ab9;
+}

@@ -6,15 +6,15 @@ import {
 } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import Delete from "../components/Delete";
-import Edit from "../components/Edit";
-import "../Styles/Product.css";
-import ImageWithFallback from "../components/ImageWithFallback";
+import Delete from "../../components/Delete";
+import Edit from "../../components/Edit";
+import "../../Styles/Product.css";
+import ImageWithFallback from "../../components/ImageWithFallback";
 import Pagination from "@mui/material/Pagination";
-import { tokenLoader } from "../Api/Authen";
-import { apiGet } from "../Api/Api";
+import { tokenLoader } from "../../Api/Authen";
+import { apiGet } from "../../Api/Api";
 import Box from "@mui/material/Box";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../../context/CartContext";
 import TextField from "@mui/material/TextField";
 
 export default function Product({ productName }) {
@@ -45,7 +45,7 @@ export default function Product({ productName }) {
         <TextField type="text"
           placeholder="Search product..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)} size="small"/>
+          onChange={(e) => setSearchTerm(e.target.value)} size="small" />
         {/* <input
           type="text"
           placeholder="Search product..."
@@ -58,47 +58,47 @@ export default function Product({ productName }) {
           <Button variant="contained">Create Product</Button>
         </Link>
       </div>
-
-      <div className="Tabs-1">
-        <p></p>
-        <p>name</p>
-        <p>Price</p>
-        <p>Stock</p>
-        <p>Description</p>
-        <p>Category</p>
-        <p></p>
-      </div>
+      <div className="tabs-container">
+        <div className="Tabs-1">
+          <p></p>
+          <p>name</p>
+          <p>Price</p>
+          <p>Stock</p>
+          <p>Description</p>
+          <p>Category</p>
+          <p></p>
+        </div>
 
         <div className="card-list-horizontal">
-     
-       {filteredProducts.map((product) => (
-          // <div key={product.id} className="card-horizontal">
-          <div className="Tabs-2">
-            <ImageWithFallback
-            // className="tablist"      
-              src={`${import.meta.env.VITE_HTTP_URL}/image/${product.image}`}
-              alt={product.name}
-            />
-            {/* <div className="card-info"> */}
+
+          {filteredProducts.map((product) => (
+            // <div key={product.id} className="card-horizontal">
+            <div key={product.id} className="Tabs-2">
+              <ImageWithFallback
+                // className="tablist"      
+                src={`${import.meta.env.VITE_HTTP_URL}/image/${product.image}`}
+                alt={product.name}
+              />
+              {/* <div className="card-info"> */}
               <h4 className="tablist">{product.name}</h4>
               <p className="tablist">{formatMoney(product.price)} Kip</p>
               <p className="tablist"> {product.stock}</p>
               <p className="tablist">{product.description}</p>
               <p className="tablist">{product.category !== null ? product.category.name : ""}</p>
-            {/* </div> */}
-            <div className="tablist">
-              <Delete
-                id={product.id}
+              {/* </div> */}
+              <div className="tablist">
+                <Delete
+                  id={product.id}
                 // onDeleted={(deletedId) => setProducts(productdata.filter((p) => p.id !== deletedId))
                 // }
-              />
-              <Edit id={product.id} onEdited={product} />
+                />
+                <Edit id={product.id} onEdited={product} />
+              </div>
+
             </div>
-           
-            </div>
-          // </div>
-        ))}
-      
+            // </div>
+          ))}
+        </div>
       </div>
 
       {/* <div className="card-list-horizontal">

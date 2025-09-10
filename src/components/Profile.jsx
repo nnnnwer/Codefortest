@@ -15,8 +15,20 @@ import { tokenLoader } from "../Api/Authen";
 import { apiPost } from "../Api/Api";
 import Swal from "sweetalert2";
 import { Link, redirect } from "react-router-dom";
+import MyAccount from "../pages/Profile/MyAccount";
+import { UserAuth } from "../context/AuthContext";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 export default function AccountMenu({ id, onLogout }) {
+  const { session } = UserAuth();
+  const isSmall = useMediaQuery('(min-width:900px)');
+  const [openModal, setOpenModal] = React.useState(false);
+  function handleOpenModal() {
+    setOpenModal(true);
+  }
+  function handleCloseModal() {
+    setOpenModal(false);
+  }
   const handleLogout = async () => {
     try {
       localStorage.removeItem("token");
@@ -54,7 +66,9 @@ export default function AccountMenu({ id, onLogout }) {
 
   return (
     <React.Fragment>
-      <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
+      {isSmall?(
+<>
+ <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
         <Tooltip title="Account settings">
           <IconButton
             onClick={handleClick}
@@ -64,7 +78,7 @@ export default function AccountMenu({ id, onLogout }) {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <Avatar sx={{ width: 42, height: 42 }}>A</Avatar>
+            <Avatar sx={{ width: 42, height: 42 }} alt='logo' src={session.image === null ? '/broken-image.jpg' : `${import.meta.env.VITE_HTTP_URL}/image/${session.image}`} />
           </IconButton>
         </Tooltip>
       </Box>
@@ -108,8 +122,12 @@ export default function AccountMenu({ id, onLogout }) {
         {/* <MenuItem onClick={handleClose}>
           <Avatar /> Profile
         </MenuItem> */}
-        <MenuItem onClick={handleClose}>
-          <Avatar /> <Link to = "myaccount">My account</Link>
+        <MenuItem onClick={() => {
+          handleClose();
+          handleOpenModal();
+        }}>
+          <Avatar alt='logo' src={session.image === null ? '/broken-image.jpg' : `${import.meta.env.VITE_HTTP_URL}/image/${session.image}`} /> <p>My account </p>
+
         </MenuItem>
         <Divider />
         {/* <MenuItem onClick={handleClose}>
@@ -131,6 +149,24 @@ export default function AccountMenu({ id, onLogout }) {
           Logout
         </MenuItem>
       </Menu>
+</>
+        
+      ):(<>
+      <Tooltip title="Account settings">
+          <IconButton
+            onClick={handleOpenModal}
+            size="small"
+            sx={{ ml: 2 }}
+            aria-controls={open ? "account-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+          >
+            <Avatar sx={{ width: 42, height: 42 }} alt='logo' src={session.image === null ? '/broken-image.jpg' : `${import.meta.env.VITE_HTTP_URL}/image/${session.image}`} />
+          </IconButton>
+        </Tooltip>
+      </>)}
+     
+      <MyAccount onOpen={openModal} onClose={handleCloseModal} />
     </React.Fragment>
   );
 }

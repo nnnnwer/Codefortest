@@ -1,5 +1,5 @@
 import "../Styles/Item.css";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../../context/CartContext";
 
 export default function Item({ id, name, price, image }) {
   const { formatMoney, addToCart } = useCart();

@@ -112,7 +112,7 @@
 .cart-modal {
   background-color: white;
   width: 350px;
-  max-height: 90%; 
+  max-height: 100%; 
   overflow-y: auto;
   padding: 10px;
   position: relative;

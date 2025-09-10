@@ -31,7 +31,7 @@ const ImageWithFallback1 = ({ src, alt }) => {
   if (status === "error") return fallbackImage;
   if (status === "loading")
     return <div style={{ width: "180px", height: "180px", backgroundColor: "#eee" }} />;
-  return <img src={src} alt={alt} style={{ width: "190px", height: "180px", borderRadius: "4px", objectFit: "cover" }} />;
+  return <img src={src} alt={alt} style={{ width: "100%", height: "180px", borderRadius: "4px", objectFit: "cover" }} />;
 };
 
 export default ImageWithFallback1

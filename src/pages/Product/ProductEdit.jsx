@@ -1,15 +1,15 @@
 import React from "react";
 import { useLocation, Form ,redirect, useParams, useNavigate, useLoaderData} from "react-router-dom";
-import UploadImage from "../components/UploadImage";
-import { apiGet, apiPut } from "../Api/Api";
-import { UserAuth } from "../context/AuthContext";
-import { tokenLoader } from "../Api/Authen";
+import UploadImage from "../../components/UploadImage";
+import { apiGet, apiPut } from "../../Api/Api";
+import { UserAuth } from "../../context/AuthContext";
+import { tokenLoader } from "../../Api/Authen";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import Selectcategory from "../components/Selectcategory"
+import Selectcategory from "../../components/Selectcategory"
 function ProductEdit() {
   const location = useLocation();
   const product = location.state?.onEdited;

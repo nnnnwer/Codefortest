@@ -14,10 +14,17 @@ const cartReducer = (state, action) => {
         total: 0,
         amount: 0,
       }
-    ); 
+    );
     return { ...state, total, amount };
   }
-
+  if (action.type === "DELETE") {
+    return {
+      ...state,
+      cartItems: [],
+      total: 0,
+      amount: 0,
+    };
+  }
   if (action.type === "REMOVE") {
     return {
       ...state,
@@ -83,7 +90,7 @@ const cartReducer = (state, action) => {
     }
   }
 
-  
+
   if (action.type === "CLEAR_CART") {
     return {
       ...state,
@@ -97,4 +104,3 @@ const cartReducer = (state, action) => {
 };
 
 export default cartReducer;
- 
