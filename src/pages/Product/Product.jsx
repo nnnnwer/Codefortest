@@ -86,14 +86,15 @@ export default function Product({ productName }) {
               <p className="tablist">{product.description}</p>
               <p className="tablist">{product.category !== null ? product.category.name : ""}</p>
               {/* </div> */}
-              <div className="tablist">
+  
+               
                 <Delete
                   id={product.id}
                 // onDeleted={(deletedId) => setProducts(productdata.filter((p) => p.id !== deletedId))
                 // }
                 />
                 <Edit id={product.id} onEdited={product} />
-              </div>
+              
 
             </div>
             // </div>
@@ -126,6 +127,7 @@ export default function Product({ productName }) {
           </div>
         ))}
       </div> */}
+  
       <Box display="flex" justifyContent="center" mt={2}>
         <Pagination
           count={productdata.pagination.totalPages}

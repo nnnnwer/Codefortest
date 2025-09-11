@@ -12,7 +12,7 @@ export default function FloatingActionButtons({id , onEdited}) {
 
   }
   return (
-    <Box sx={{ '& > :not(style)': { m: 1 } }}>
+    <Box sx={{ '& > :not(style)': { m: 1, position: 'relative', zIndex: 10 }}}>
        
       <Fab color="primary" aria-label="edit">
         <EditIcon onClick={handleEdit}/>

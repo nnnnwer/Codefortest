@@ -26,6 +26,8 @@ export const router = createBrowserRouter([
     action:actionProfile,
     children: [
       { index: true, element: <Order />, action: actionSignin ,loader: loaderOrderPage,},
+      { path:'order', element: <Order />, action: actionSignin ,loader: loaderOrderPage,},
+
 //  {
 //         path: "order",
 //         element: <RootOrder />,

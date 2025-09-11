@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import { redirect, useNavigate } from 'react-router-dom';
 
 export default function Delete({ id }) {
+  console.log('delete')
   const navigate = useNavigate();
   const handleDelete = async () => {
     
@@ -35,7 +36,7 @@ export default function Delete({ id }) {
   };
 
   return (
-    <Box sx={{ '& > :not(style)': { m: 1 } }}>
+    <Box sx={{ '& > :not(style)': { m: 1, position: 'relative', zIndex: 10 }}}>
       <Fab color="error" aria-label="delete" onClick={handleDelete}>
         <DeleteIcon />
       </Fab>

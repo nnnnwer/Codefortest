@@ -152,8 +152,7 @@ flex: 0 0 auto;  */
   /* text-align: center;  */
   align-items: center;
   justify-content: center;
-  z-index: -1;
-  
+
 }
 h2{
   color: rgb(61, 61, 61);
